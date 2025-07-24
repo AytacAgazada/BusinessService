@@ -1,0 +1,32 @@
+spring:
+  cache:
+    type: redis
+    ttl-seconds: 300
+
+  data:
+    redis:
+      host: redis
+      port: 6379
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/postgres
+    username: postgres
+    password: 16032005
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+
+logging:
+  level:
+    com.example.businessservice: INFO
+    org.hibernate.SQL: WARN
+    org.hibernate.orm.jdbc.bind: OFF
+
+server:
+  port: 9194

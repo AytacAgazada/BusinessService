@@ -11,6 +11,10 @@ ext{
 	set('springCloudVersion', '2023.0.2')
 }
 
+bootJar {
+	archiveFileName = "app.jar"
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
