@@ -23,7 +23,7 @@ services:
       - redis-data:/data
     restart: unless-stopped
 
-  customerservice:
+  businessservice:
     build: .
     container_name: business-service
     ports:
