@@ -29,7 +29,7 @@ public class BusinessOwnerService {
     private final BusinessOwnerRepository businessOwnerRepository; // 'final' açar sözü
     private final AuthServiceClient authServiceClient;
 
-    @CacheEvict(value = "businessOwners", allEntries = true) // Yeni profil yaradıldıqda keş təmizlənsin
+    @Cacheable(value = "businessOwners", key = "#authUserId")
     public BusinessOwnerDto createBusinessOwner(Long authUserId, CreateBusinessOwnerRequest request){
         log.info("Creating business owner with authUserId: {}", authUserId);
 

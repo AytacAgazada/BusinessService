@@ -16,6 +16,7 @@ public interface BusinessRepository extends JpaRepository<Business, Long> {
 
     boolean existsByCompanyName(String companyName);
 
+    boolean existsById(Long id);
 
 }
 

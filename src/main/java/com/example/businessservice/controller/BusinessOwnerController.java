@@ -4,6 +4,7 @@ import com.example.businessservice.model.dto.businessOwnerdto.BusinessOwnerDto;
 import com.example.businessservice.model.dto.businessOwnerdto.CreateBusinessOwnerRequest;
 import com.example.businessservice.model.dto.businessOwnerdto.UpdateBusinessOwnerRequest;
 import com.example.businessservice.service.BusinessOwnerService;
+import jakarta.persistence.PrePersist;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

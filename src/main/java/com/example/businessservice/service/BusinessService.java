@@ -2,7 +2,6 @@ package com.example.businessservice.service;
 
 import com.example.businessservice.exception.BusinessAlreadyExistsException;
 import com.example.businessservice.exception.ResourceNotFoundException;
-import com.example.businessservice.feign.AuthServiceClient;
 import com.example.businessservice.model.dto.businessDto.BusinessDto;
 import com.example.businessservice.model.dto.businessDto.CreateBusinessRequest;
 import com.example.businessservice.model.dto.businessDto.UpdateBusinessRequest;
@@ -169,4 +168,7 @@ public class BusinessService {
         businessRepository.deleteAll();
     }
 
+    public boolean doesBusinessExistById(Long id) {
+        return businessRepository.existsById(id);
+    }
 }

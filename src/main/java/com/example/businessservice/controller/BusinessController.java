@@ -108,4 +108,11 @@ public class BusinessController {
         log.info("All businesses deleted successfully.");
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}/exists")
+    public ResponseEntity<Boolean> doesBusinessExistById(@PathVariable Long id) {
+        log.info("Checking if customer exists with Auth User ID: {}",id);
+        boolean exists = businessService.doesBusinessExistById(id);
+        return ResponseEntity.ok(exists);
+    }
 }

@@ -42,5 +42,9 @@ public class BusinessOwnerDto {
         this.skills = businessOwner.getSkills();
         this.email = businessOwner.getEmail();
         this.phone = businessOwner.getPhone();
+        this.jobTitle = businessOwner.getJobTitle();
+        this.yearsOfExperience = businessOwner.getYearsOfExperience();
+        this.linkedInProfileUrl = businessOwner.getLinkedInProfileUrl();
+        this.bio = businessOwner.getBio();
     }
 }
