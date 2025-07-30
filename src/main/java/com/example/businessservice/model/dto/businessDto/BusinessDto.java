@@ -29,6 +29,9 @@ public class BusinessDto {
         this.email = business.getEmail();
         this.phone = business.getPhone();
         this.address = business.getAddress();
+        this.ownerId = business.getOwner().getId();
         this.createdAt = business.getCreatedAt();
+        this.updatedAt = business.getUpdatedAt();
+
     }
 }

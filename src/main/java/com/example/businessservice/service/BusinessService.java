@@ -59,7 +59,6 @@ public class BusinessService {
         return new BusinessDto(savedBusiness);
     }
 
-    @Cacheable(value = "businessById", key = "#id")
     public BusinessDto getBusinessById(Long id) {
         log.info("Fetching business by ID: {}", id);
         return businessRepository.findById(id)
@@ -70,7 +69,6 @@ public class BusinessService {
                 });
     }
 
-    @Cacheable(value = "businessByCompanyName", key = "#companyName")
     public BusinessDto getBusinessByCompanyName(String companyName) {
         log.info("Fetching business by company name: {}", companyName);
         return businessRepository.findByCompanyName(companyName)
@@ -106,7 +104,6 @@ public class BusinessService {
             put = {
                     @CachePut(value = "businessById", key = "#id"),
                     @CachePut(value = "businessByCompanyName", key = "#result.companyName"),
-                    @CachePut(value = "businessesByOwnerId", key = "#result.owner.id")
             },
             evict = {
                     @CacheEvict(value = "allBusinessesCache", allEntries = true)
