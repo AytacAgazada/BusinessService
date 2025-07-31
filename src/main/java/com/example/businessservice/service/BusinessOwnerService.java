@@ -79,7 +79,7 @@ public class BusinessOwnerService {
         return new BusinessOwnerDto(savedBusinessOwner);
     }
 
-    @Cacheable(value = "businessOwners", key = "'authUserId-' + #authUserId")
+//    @Cacheable(value = "businessOwners", key = "'authUserId-' + #authUserId")
     public BusinessOwnerDto getBusinessOwnerByAuthUserId(Long authUserId) {
         log.info("Fetching business owner by Auth User ID: {}", authUserId);
         return businessOwnerRepository.findByAuthUserId(authUserId)
