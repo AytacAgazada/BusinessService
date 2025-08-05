@@ -2,6 +2,7 @@ package com.example.businessservice.model.dto.businessOwnerdto;
 
 import com.example.businessservice.model.dto.businessDto.BusinessDto;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Set;
@@ -13,7 +14,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class BusinessOwnerDto {
+public class BusinessOwnerDto implements Serializable {
 
     private Long id;
     private Long authUserId;
@@ -30,7 +31,6 @@ public class BusinessOwnerDto {
     private String bio;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
-    private Set<BusinessDto> businesses;
 
     public BusinessOwnerDto(BusinessOwner businessOwner) {
         this.id = businessOwner.getId();

@@ -90,7 +90,7 @@ public class BusinessOwnerService {
                 });
     }
 
-    @Cacheable(value = "businessOwners", key = "#id")
+//    @Cacheable(value = "businessOwners", key = "#id")
     @Transactional(readOnly = true)
     public BusinessOwnerDto getBusinessOwnerById(Long id) {
         log.info("Fetching business owner by ID: {}", id);

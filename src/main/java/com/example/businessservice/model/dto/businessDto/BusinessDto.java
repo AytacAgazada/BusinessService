@@ -1,9 +1,12 @@
 package com.example.businessservice.model.dto.businessDto;
 
+import com.example.businessservice.model.dto.businessOwnerdto.BusinessOwnerDto;
 import com.example.businessservice.model.entity.Business;
+import com.example.businessservice.model.entity.BusinessOwner;
 import lombok.*;
 
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 public class BusinessDto {
@@ -19,6 +22,7 @@ public class BusinessDto {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
     private Long ownerId;
+    private BusinessOwnerDto owner;
 
     public BusinessDto(Business business) {
         this.id = business.getId();
